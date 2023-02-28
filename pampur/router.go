@@ -1,14 +1,15 @@
-package router
+package pampur
 
 import (
 	"fmt"
 	"net/http"
 	"regexp"
 	"strings"
+	//"github.com/pampur/err"
 )
 
 type NextFunction 	func()
-type Handler func(c *Ctx, w http.ResponseWriter, r *http.Request, n NextFunction)
+type Handler func(c *Ctx, w http.ResponseWriter, r *http.Request, n NextFunction) Error
 
 type Ctx struct {
 	Params  map[string]any
